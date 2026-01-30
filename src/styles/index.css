@@ -159,10 +159,17 @@ h1, h2, h3, h4 {
 }
 
 /* Search Bar */
+.search-filter-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
 .search-bar {
   position: relative;
-  max-width: 500px;
-  margin-bottom: 30px;
+  flex: 1;
+  min-width: 250px;
 }
 
 .search-bar input {
@@ -188,6 +195,103 @@ h1, h2, h3, h4 {
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-secondary);
+}
+
+/* Filter Button & Panel */
+.btn-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--card-background);
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-filter:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-filter.active {
+  border-color: var(--primary-color);
+  background: rgba(230, 126, 34, 0.1);
+  color: var(--primary-color);
+}
+
+.filter-badge {
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-right: 4px;
+}
+
+.filters-panel {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 180px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.filter-group select {
+  padding: 10px 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.btn-clear-filters {
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid #ff6b6b;
+  color: #ff6b6b;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-clear-filters:hover {
+  background: #ff6b6b;
+  color: white;
 }
 
 /* Recipes Grid */
