@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/michal-amazing-recipes/static/css/main.3148f25d.css",
+    "main.js": "/michal-amazing-recipes/static/js/main.e24c5c58.js",
+    "index.html": "/michal-amazing-recipes/index.html",
+    "main.3148f25d.css.map": "/michal-amazing-recipes/static/css/main.3148f25d.css.map",
+    "main.e24c5c58.js.map": "/michal-amazing-recipes/static/js/main.e24c5c58.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3148f25d.css",
+    "static/js/main.e24c5c58.js"
+  ]
+}
