@@ -1,6 +1,12 @@
 import React from 'react';
 import { X, Clock, Flame, Users, Edit, Trash2 } from 'lucide-react';
 
+const KOSHER_LABELS = {
+  meat: 'בשרי',
+  dairy: 'חלבי',
+  pareve: 'פרווה'
+};
+
 function RecipeDetail({ recipe, onClose, onEdit, onDelete }) {
   if (!recipe) return null;
 
@@ -21,9 +27,16 @@ function RecipeDetail({ recipe, onClose, onEdit, onDelete }) {
           </div>
 
           <div className="recipe-detail-body">
-            {recipe.category && (
-              <span className="recipe-detail-category">{recipe.category}</span>
-            )}
+            <div className="recipe-detail-tags">
+              {recipe.category && (
+                <span className="recipe-detail-category">{recipe.category}</span>
+              )}
+              {recipe.kosherType && (
+                <span className={`recipe-detail-kosher kosher-${recipe.kosherType}`}>
+                  {KOSHER_LABELS[recipe.kosherType]}
+                </span>
+              )}
+            </div>
             
             <h1 className="recipe-detail-title">{recipe.name}</h1>
             

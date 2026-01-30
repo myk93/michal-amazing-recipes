@@ -13,6 +13,13 @@ const CATEGORIES = [
   { value: 'other', label: 'אחר' }
 ];
 
+const KOSHER_TYPES = [
+  { value: '', label: 'בחר סוג' },
+  { value: 'meat', label: 'בשרי' },
+  { value: 'dairy', label: 'חלבי' },
+  { value: 'pareve', label: 'פרווה' }
+];
+
 function RecipeForm({ recipe, isEditing, onSubmit, onCancel }) {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -20,6 +27,7 @@ function RecipeForm({ recipe, isEditing, onSubmit, onCancel }) {
   const [cookTime, setCookTime] = useState('');
   const [servings, setServings] = useState('');
   const [category, setCategory] = useState('');
+  const [kosherType, setKosherType] = useState('');
   const [ingredients, setIngredients] = useState(['']);
   const [instructions, setInstructions] = useState(['']);
 
@@ -34,6 +42,7 @@ function RecipeForm({ recipe, isEditing, onSubmit, onCancel }) {
       setCookTime(recipe.cookTime || '');
       setServings(recipe.servings || '');
       setCategory(recipe.category || '');
+      setKosherType(recipe.kosherType || '');
       setIngredients(recipe.ingredients?.length > 0 ? recipe.ingredients : ['']);
       setInstructions(recipe.instructions?.length > 0 ? recipe.instructions : ['']);
       setInitialImages(recipe.images || []);
@@ -63,6 +72,7 @@ function RecipeForm({ recipe, isEditing, onSubmit, onCancel }) {
       cookTime: cookTime.trim(),
       servings: servings.trim(),
       category,
+      kosherType,
       ingredients: filteredIngredients,
       instructions: filteredInstructions,
       images,
@@ -80,6 +90,7 @@ function RecipeForm({ recipe, isEditing, onSubmit, onCancel }) {
     setCookTime('');
     setServings('');
     setCategory('');
+    setKosherType('');
     setIngredients(['']);
     setInstructions(['']);
     clearImages();
@@ -201,6 +212,21 @@ function RecipeForm({ recipe, isEditing, onSubmit, onCancel }) {
               {CATEGORIES.map(cat => (
                 <option key={cat.value} value={cat.value}>
                   {cat.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="kosher-type">בשרי / חלבי / פרווה</label>
+            <select
+              id="kosher-type"
+              value={kosherType}
+              onChange={(e) => setKosherType(e.target.value)}
+            >
+              {KOSHER_TYPES.map(type => (
+                <option key={type.value} value={type.value}>
+                  {type.label}
                 </option>
               ))}
             </select>

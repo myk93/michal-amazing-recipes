@@ -1,6 +1,12 @@
 import React from 'react';
 import { Clock, Flame, Users } from 'lucide-react';
 
+const KOSHER_LABELS = {
+  meat: 'בשרי',
+  dairy: 'חלבי',
+  pareve: 'פרווה'
+};
+
 function RecipeCard({ recipe, onClick }) {
   return (
     <article className="recipe-card" onClick={onClick}>
@@ -12,9 +18,16 @@ function RecipeCard({ recipe, onClick }) {
         )}
       </div>
       <div className="recipe-card-content">
-        {recipe.category && (
-          <span className="recipe-card-category">{recipe.category}</span>
-        )}
+        <div className="recipe-card-tags">
+          {recipe.category && (
+            <span className="recipe-card-category">{recipe.category}</span>
+          )}
+          {recipe.kosherType && (
+            <span className={`recipe-card-kosher kosher-${recipe.kosherType}`}>
+              {KOSHER_LABELS[recipe.kosherType]}
+            </span>
+          )}
+        </div>
         <h3 className="recipe-card-title">{recipe.name}</h3>
         <p className="recipe-card-description">
           {recipe.description || 'אין תיאור'}
