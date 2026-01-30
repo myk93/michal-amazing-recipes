@@ -4,12 +4,18 @@ import RecipeCard from './RecipeCard';
 
 const CATEGORIES = [
   { value: '', label: 'כל הקטגוריות' },
+  { value: 'appetizer', label: 'מנה ראשונה' },
+  { value: 'main', label: 'מנה עיקרית' },
+  { value: 'side', label: 'תוספות' },
+  { value: 'soup', label: 'מרקים' },
+  { value: 'salad', label: 'סלטים' },
+  { value: 'cake', label: 'עוגות' },
+  { value: 'cookies', label: 'עוגיות' },
+  { value: 'dessert', label: 'קינוחים' },
+  { value: 'bread', label: 'לחמים ומאפים' },
+  { value: 'drink', label: 'משקאות' },
   { value: 'breakfast', label: 'ארוחת בוקר' },
-  { value: 'lunch', label: 'ארוחת צהריים' },
-  { value: 'dinner', label: 'ארוחת ערב' },
-  { value: 'dessert', label: 'קינוח' },
-  { value: 'snack', label: 'חטיף' },
-  { value: 'drink', label: 'משקה' },
+  { value: 'snack', label: 'חטיפים' },
   { value: 'other', label: 'אחר' }
 ];
 
