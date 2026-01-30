@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/michal-amazing-recipes/static/css/main.18dc7c9b.css",
-    "main.js": "/michal-amazing-recipes/static/js/main.d98f7487.js",
+    "main.css": "/michal-amazing-recipes/static/css/main.c26d0b67.css",
+    "main.js": "/michal-amazing-recipes/static/js/main.270b93ac.js",
     "index.html": "/michal-amazing-recipes/index.html",
-    "main.18dc7c9b.css.map": "/michal-amazing-recipes/static/css/main.18dc7c9b.css.map",
-    "main.d98f7487.js.map": "/michal-amazing-recipes/static/js/main.d98f7487.js.map"
+    "main.c26d0b67.css.map": "/michal-amazing-recipes/static/css/main.c26d0b67.css.map",
+    "main.270b93ac.js.map": "/michal-amazing-recipes/static/js/main.270b93ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.18dc7c9b.css",
-    "static/js/main.d98f7487.js"
+    "static/css/main.c26d0b67.css",
+    "static/js/main.270b93ac.js"
   ]
 }
